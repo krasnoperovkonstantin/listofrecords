@@ -13,8 +13,10 @@
 
 Route::get('/', function () {
     return view('list');
-});
+})->name('list');
 
 Route::get('/edit', function () {
     return view('edit');
-});
+})->name('edit');
+
+Route::post('/edit/submit', 'EditController@submit')->name('edit-form');
