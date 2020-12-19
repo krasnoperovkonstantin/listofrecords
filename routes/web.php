@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('list');
-})->name('list');
+    return view('records');
+})->name('records');
 
 Route::get('/edit', function () {
     return view('edit');
