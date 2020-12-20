@@ -5,17 +5,9 @@
 
 @section('content')
 
-<h1>Редактировать</h1>
-@if($errors->all())
-<div class="alert alert-danger">
-  <ul>
-    @foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-</div>
-@endif
-<form action="{{ route('edit-form')}}" method="post">
+<h1>создание</h1>
+
+<form action="{{ route('insert-submit')}}" method="post">
   @csrf
   <div class="form-group">
     <label for="name">Название пластинки</label>

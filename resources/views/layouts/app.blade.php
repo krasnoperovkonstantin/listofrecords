@@ -15,7 +15,9 @@
     </head>
     <body>
         @include('inc.header')
+
         <div class="container">
+        @include('inc.messages')
             <div class="row">
                 <div class="col">
                     @yield('content')
