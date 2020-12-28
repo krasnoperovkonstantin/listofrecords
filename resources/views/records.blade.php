@@ -4,15 +4,15 @@
 
 @section('content')
 
-    @foreach($data->all() as $data)
+    @foreach($data->all() as $value)
     <div class="alert alert-info">
-    {{ $data->name }} {{ $data->author }}
-    <a href="{{ route('update', $data->id)}}">Update</a>
-    <a href="{{ route('delete-submit', $data->id)}}">Delete</a>
+    {{ $value->name }} {{ $value->author }}
+    <a href="{{ route('update', $value->id)}}">Update</a>
+    <a href="{{ route('delete-submit', $value->id)}}">Delete</a>
     </div>
     @endforeach
   
-
+    {{ $data->links() }}
 
 @endsection
 

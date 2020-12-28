@@ -5,9 +5,8 @@
     </a>
     <a class="py-2 d-none d-md-inline-block" href="{{ route('records')}}">Records</a>
     <a class="py-2 d-none d-md-inline-block" href="{{ route('insert')}}">Insert</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-    <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+      <a class="py-2 d-none d-md-inline-block" href="{{ route('home')}}">home</a>
+      <a class="py-2 d-none d-md-inline-block" href="{{ route('register')}}">register</a>
+      <a class="py-2 d-none d-md-inline-block" href="{{ route('login')}}">login</a>
+      <a class="py-2 d-none d-md-inline-block" href="{{ route('logout')}}">logout</a>
   </nav>

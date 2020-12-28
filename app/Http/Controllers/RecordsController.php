@@ -8,6 +8,11 @@ use App\Records;
 
 class RecordsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function insert(){
         return view('insert');
     }
@@ -46,10 +51,10 @@ class RecordsController extends Controller
 
     public function get(){
         $records = new Records();
-        //dd($records->all());
-        return view('records', ['data'=> $records->where('name', '<>' , 'dwrwrwer')->get() ]);
+        //dd($records->paginate(5));
+        //return view('records', ['data'=> $records->where('name', '<>' , 'dwrwrwer')->get() ]);
         //return view('records', ['data'=> $records ]);
-        //return view('records');
+        return view('records', ['data' => $records->paginate(5)]);
     }
 }
 
