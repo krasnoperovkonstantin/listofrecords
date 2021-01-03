@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'List of records'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        listofrecords\Providers\AppServiceProvider::class,
+        listofrecords\Providers\AuthServiceProvider::class,
+        // listofrecords\Providers\BroadcastServiceProvider::class,
+        listofrecords\Providers\EventServiceProvider::class,
+        listofrecords\Providers\RouteServiceProvider::class,
 
     ],
 

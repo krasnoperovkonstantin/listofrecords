@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/', 'RecordsController@get')->name('records');
+Route::get('/home', 'RecordsController@get')->name('home');
 
 Route::get('/insert', 'RecordsController@insert')->name('insert');
 Route::post('/insert/submit', 'RecordsController@insertSubmit')->name('insert-submit');
@@ -22,6 +23,4 @@ Route::post('/update/{id}/submit', 'RecordsController@updateSubmit')->name('upda
 
 Route::get('/delete/{id}/submit', 'RecordsController@deleteSubmit')->name('delete-submit');
 
-
-Route::get('/logout', 'Auth\AuthController@getLogout');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'LogoutController@logout')->name('logout');

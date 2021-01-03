@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace listofrecords\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\EditRequest;
-use App\Records;
+use listofrecords\Http\Requests\EditRequest;
+use listofrecords\Records;
 
 class RecordsController extends Controller
 {
@@ -12,7 +12,7 @@ class RecordsController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function insert(){
         return view('insert');
     }
@@ -22,9 +22,10 @@ class RecordsController extends Controller
         $records->name = $request->input('name');
         $records->author = $request->input('author');
         $records->genre = $request->input('genre');
+        $records->listoftracks = $request->input('listoftracks');
         $records->save();
      
-        return redirect()->route ('records')->with('success','добавлено');
+        return redirect()->route ('records')->with('success','Пластинка добавлена');
     }
 
     public function update($id){
@@ -38,15 +39,16 @@ class RecordsController extends Controller
         $records->name = $request->input('name');
         $records->author = $request->input('author');
         $records->genre = $request->input('genre');
+        $records->listoftracks = $request->input('listoftracks');
         $records->save();
      
-        return redirect()->route ('records')->with('success','обновлено');
+        return redirect()->route ('records')->with('success','Изменения сохранены');
     }
 
     public function deleteSubmit($id){
         Records::find($id)->delete();
      
-        return redirect()->route ('records')->with('success','Удалено');
+        return redirect()->route ('records')->with('success','Пластинка удалена');
     }
 
     public function get(){

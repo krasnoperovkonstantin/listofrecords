@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace listofrecords;
 
 use Illuminate\Database\Eloquent\Model;
 

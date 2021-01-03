@@ -18,6 +18,8 @@ class CreateRecordsTable extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('genre');
+            $table->string('genre');
+            $table->text('listoftracks');
             $table->timestamps();
         });
     }
