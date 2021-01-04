@@ -24,7 +24,6 @@ class EditRequest extends FormRequest
     public function rules() {
         return [
             'name' => 'required',
-            'author' => 'required',
             'genre' => 'required',
         ];
     }
@@ -32,7 +31,6 @@ class EditRequest extends FormRequest
     public function messages() {
         return [
             'name.required' => 'Поле имя является обязательным',
-            'author.required' => 'Поле автор является обязательным',
             'genre.required' => 'Поле жанр является обязательным',
         ];
     }
