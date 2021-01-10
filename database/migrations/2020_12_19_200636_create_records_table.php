@@ -16,12 +16,12 @@ class CreateRecordsTable extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('genre');
-            $table->string('format');
-            $table->string('origin');
-            $table->string('releasedate');
-            $table->string('manufacturer');
-            $table->text('listoftracks');
+            $table->string('genre')->nullable();
+            $table->string('format')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('releasedate')->nullable();
+            $table->string('manufacturer')->nullable();
+            $table->text('listoftracks')->nullable();
             $table->timestamps();
         });
     }

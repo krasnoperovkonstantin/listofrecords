@@ -23,15 +23,13 @@ class EditRequest extends FormRequest
      */
     public function rules() {
         return [
-            'name' => 'required',
-            'genre' => 'required',
+            'name' => 'required',   
         ];
     }
 
     public function messages() {
         return [
             'name.required' => 'Поле имя является обязательным',
-            'genre.required' => 'Поле жанр является обязательным',
         ];
     }
 

@@ -53,15 +53,11 @@ class RecordsController extends Controller
 
     public function deleteSubmit($id){
         Records::find($id)->delete();
-     
         return redirect()->route ('records')->with('success','Пластинка удалена');
     }
 
     public function get(){
         $records = new Records();
-        //dd($records->paginate(5));
-        //return view('records', ['data'=> $records->where('name', '<>' , 'dwrwrwer')->get() ]);
-        //return view('records', ['data'=> $records ]);
         return view('records', ['data' => $records->paginate(5)]);
     }
 }

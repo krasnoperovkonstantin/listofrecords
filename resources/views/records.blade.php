@@ -39,7 +39,7 @@
             <a href="{{ route('delete-submit', $value->id)}}" class="btn btn-outline-secondary">{{ __('face.delete') }}</a>
         </div>
         <div class="col-sm-5">
-            <textarea name="listoftracks" id="listoftracks" rows="7" placeholder="Список записей пуст" class="form-control" readonly>{{$value->listoftracks}}</textarea>
+            <textarea name="listoftracks" id="listoftracks" rows="11" placeholder="Список записей пуст" class="form-control" readonly>{{$value->listoftracks}}</textarea>
         </div>
 
     </div>
