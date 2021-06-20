@@ -10,46 +10,19 @@
         <a href="#" class="btn btn-outline-primary">Category 4</a>
         <a href="#" class="btn btn-outline-primary">Category 5</a>
     </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <a href="#">Post category</a>
+    @foreach($records as $record)
+        <div class="card mb-4">
+            <div class="card-header">
+                <a href="#">{{$record->subgenre->genre->title}}</a>
+                <a href="#">{{$record->subgenre->title}}</a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{$record->title}}</h5>
+                <p class="card-text">{{$record->description}}</p>
+                <a href="#" class="btn btn-primary">Read more</a>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Post title</h5>
-            <p class="card-text">Post description</p>
-            <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-    </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <a href="#">Post category</a>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Post title</h5>
-            <p class="card-text">Post description</p>
-            <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-    </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <a href="#">Post category</a>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Post title</h5>
-            <p class="card-text">Post description</p>
-            <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-    </div>
-    <div class="card mb-4">
-        <div class="card-header">
-            <a href="#">Post category</a>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Post title</h5>
-            <p class="card-text">Post description</p>
-            <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-    </div>
+    @endforeach
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>

@@ -20,7 +20,7 @@ class CreateRecordsTable extends Migration
             $table->bigInteger('origin_id');
             $table->bigInteger('manufacturer_id');
             $table->string('title');
-            $table->string('descritption');
+            $table->string('description');
             $table->date('release_date');
             $table->string('part_number')->unique();
             $table->string('slug')->unique();
