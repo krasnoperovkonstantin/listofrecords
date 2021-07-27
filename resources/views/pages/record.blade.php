@@ -68,7 +68,7 @@
                                         <h5 class="card-text">Список треков:</h5>
                                         <ul class="list-group list-group-flush">
                                             @foreach ($record->tracks as $track)
-                                                <li class="list-group-item p-1">{{$track->number}}. {{$track->title}}</li>
+                                                <li class="list-group-item p-1">{{ $track->number }}. {{ $track->title }} [{{ $track->duration }}]</li>
                                             @endforeach
                                         </ul>
                                     </div>
