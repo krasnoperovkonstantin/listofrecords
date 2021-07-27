@@ -14,16 +14,15 @@ class TrackSeeder extends Seeder
      */
     public function run()
     {
-        for ($record_id = 0; $record_id < 500; $record_id++)
+        for ($record_id = 1; $record_id <= 500; $record_id++)
         {
             $quantity=mt_rand(1, 20);
-            for ($track = 0; $track < $quantity; $track++)
+            for ($track = 1; $track < $quantity; $track++)
                 DB::table('tracks')->insert([
-                    'records_id' => mt_rand(1, 500),
-                    'time' => mt_rand(1, 10),
+                    'record_id' => $record_id,
+                    'duration' => '00:' . mt_rand(0, 9 ) . ':' . mt_rand(1, 59),
                     'number' => $track,
-                    'title' => 'Трек '.$track.' пластинки '.$record_id,
-                    'slug' => 'track-'.$record_id.'-'.$track,
+                    'title' => "Трек $track пластинки $record_id",
                 ]);
         }
     }

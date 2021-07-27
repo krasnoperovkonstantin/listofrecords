@@ -14,10 +14,9 @@ class ManufacturerSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 50; $i++)
+        for ($i = 1; $i <= 50; $i++)
             DB::table('Manufacturers')->insert([
-                'title' => 'Производитель '.$i,
-                'slug' => 'manufacturer-'.$i,
+                'title' => 'Студия ' . $i,
             ]);
     }
 }

@@ -15,15 +15,15 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('subgenre_id');
-            $table->bigInteger('format_id');
-            $table->bigInteger('origin_id');
-            $table->bigInteger('manufacturer_id');
+            $table->foreignId('genre_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('format_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('origin_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('manufacturer_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
-            $table->string('description');
+            $table->mediumtext('description');
             $table->date('release_date');
             $table->string('part_number')->unique();
-            $table->string('slug')->unique();
+            $table->string('image');
             $table->timestamps();
         });
     }

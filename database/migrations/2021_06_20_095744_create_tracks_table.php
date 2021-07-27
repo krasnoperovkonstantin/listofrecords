@@ -15,11 +15,10 @@ class CreateTracksTable extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('records_id');
-            $table->time('time');
-            $table->integer('number');
+            $table->foreignId('record_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('duration');
+            $table->unsignedInteger('number');
             $table->string('title');
-            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

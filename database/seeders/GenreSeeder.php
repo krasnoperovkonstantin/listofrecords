@@ -14,10 +14,9 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 1; $i <= 20; $i++)
             DB::table('Genres')->insert([
-                'title' => 'Жанр '.$i,
-                'slug' => 'genre-'.$i,
+                'title' => 'Жанр ' . $i,
             ]);
     }
 }

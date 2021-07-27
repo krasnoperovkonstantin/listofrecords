@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             GenreSeeder::class,
-            SubgenreSeeder::class,
             FormatSeeder::class,
             OriginSeeder::class,
             ManufacturerSeeder::class,

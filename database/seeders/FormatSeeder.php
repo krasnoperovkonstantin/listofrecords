@@ -14,10 +14,9 @@ class FormatSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 1; $i <= 10; $i++)
             DB::table('Formats')->insert([
-                'title' => 'Формат '.$i,
-                'slug' => 'format-'.$i,
+                'title' => 'Формат ' . $i,
             ]);
     }
 }

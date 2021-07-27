@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['title'];
+
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
 }

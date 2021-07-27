@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\listController;
+use \App\Http\Controllers\RecordController;
+use \App\Http\Controllers\GenreController;
+use \App\Http\Controllers\FormatController;
+use \App\Http\Controllers\OriginController;
+use \App\Http\Controllers\ManufacturerController;
+use \App\Http\Controllers\TrackController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +19,16 @@ use \App\Http\Controllers\listController;
 |
 */
 
-Route::get('/', [ListController::class, 'index']);
+Route::middleware('auth')->group(function () {
+   // Route::get('/', [RecordController::class, 'index'])->name('record.index');
+    Route::fallback([RecordController::class, 'index'])->name('record.index');
+    Route::resource('record.track', TrackController::class)->shallow();
+    Route::resource('record', RecordController::class);
+    Route::resource('genre', GenreController::class);
+    Route::resource('format', FormatController::class);
+    Route::resource('origin', OriginController::class);
+    Route::resource('manufacturer', ManufacturerController::class);
+});
+
+Auth::routes();
+

@@ -14,10 +14,9 @@ class OriginSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 20; $i++)
+        for ($i = 1; $i <= 20; $i++)
             DB::table('Origins')->insert([
-                'title' => 'Происхождение '.$i,
-                'slug' => 'origin-'.$i,
+                'title' => 'Страна ' . $i,
             ]);
     }
 }
